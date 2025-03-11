@@ -1,2 +1,2 @@
 김건우
-pull test
+pull test 2
