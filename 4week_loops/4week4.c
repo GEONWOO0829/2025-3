@@ -5,7 +5,7 @@ int main(void){
     char ch2='f';
     int i;
 
-    for(i=ch1; i<=ch2; i++){ //알파벳 문자형도 숫자처럼 순서가 있음(아스키코드)
+    for(i=ch1+1; i<ch2; i++){ //알파벳 문자형도 숫자처럼 순서가 있음(아스키코드)
         printf("%c ", i);
     }
     
@@ -16,18 +16,16 @@ int main(void){
     int c; //소수를 판별하기 위해 나눌 수
     int d; //소수 판별결과
 
-    for(i=num1; i<=num2; i++){ //사이 값 계산
-        d=1;                   //먼저 소수라고 가정
+    for(i=num1+1; i<num2; i++){ //사이 값 계산         
         for(c=2; c<i; c++){ 
-            if(i%c==0){     //나누어 떨어지면 소수X
-                d=0;        // 소수 아님님
-                break;     //소수아니면 break
+            if(i%c==0){     //나누어 떨어지면 소수X  
+                break;     //소수아니면 break (가장 가까운 '루프'를 종료시킴)
             }
-
         }
-        if(d==1){ //소수라면 1유지 -> i출력
-            printf("%d ", i);
-        }
+        if(c==i){
+                printf("%d ", i);
+            }
+        
     }
     
     return 0;
